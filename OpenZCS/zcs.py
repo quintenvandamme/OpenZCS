@@ -5,14 +5,22 @@ import os.path
 import random
 
 def Print(INPUT):
+    INPUT = str(INPUT)
     INPUT = INPUT.replace('<Project1 : Application ZCS>', '')
     INPUT = INPUT.replace('</Project1>', '')
     INPUT = INPUT.replace('Print("', '')
     INPUT = INPUT.replace('")', '')
+    INPUT = INPUT.strip()
     return INPUT
 
-def MsgBox(Text):
-    ctypes.windll.user32.MessageBoxW(0, Text, "ZCS", 1)
+def MsgBox(INPUT):
+    INPUT = str(INPUT)
+    INPUT = INPUT.replace('<Project1 : Application ZCS>', '')
+    INPUT = INPUT.replace('</Project1>', '')
+    INPUT = INPUT.replace('MsgBox("', '')
+    INPUT = INPUT.replace('")', '')
+    INPUT = INPUT.strip()    
+    ctypes.windll.user32.MessageBoxW(0, INPUT, "OpenZCS", 1)
 
 def MessageBox(Text,Description):
     ctypes.windll.user32.MessageBoxW(0, Text, Description, 1)

@@ -21,35 +21,48 @@ def run():
     set_string = tk.StringVar() # Create the variable 
     set_string.set(INPUT)
     if 'Print("' in INPUT:
-        INPUT = INPUT.replace('<Project1 : Application ZCS>', '')
-        INPUT = INPUT.replace('</Project1>', '')
-        INPUT = INPUT.replace('Print("', '')
-        INPUT = INPUT.replace('")', '')
-        OUTPUT = INPUT.strip()
+        console.delete('1.0', END)
+        OUTPUT = Print(INPUT)
         date_time = date()
         console.insert(END, ''+(date_time)+' - '+(OUTPUT)+''+'\n')
         console.insert(END, ''+(date_time)+' - Program ran successfully.'+'\n')
         console.config(state=DISABLED)
+    if 'MsgBox("' in INPUT:
+        console.delete('1.0', END)
+        MsgBox(INPUT)
+        date_time = date()
+        console.insert(END, ''+(date_time)+' - Program ran successfully.'+'\n')
+        console.config(state=DISABLED)
     else:
+        console.delete('1.0', END)
         console.insert(END, ""+'\n')
         console.config(state=DISABLED)
 
-def info():
-   window = Toplevel() # className='About (OpenZCS) (debug)'
-   #window = Tk() 
-   window.title("About (OpenZCS) (debug)")
-   window.geometry("450x550")
-   window.minsize(450, 550)
-   window.maxsize(450, 550)
-   window.configure(bg='white')
-   Label(window, text = "zeqOS", bg="white", font =('Segoe UI Semibold', 28)).place(x=75, y=45)
-   Label(window, text = "Chabazite", bg="white", font =('Segoe UI Light', 28)).place(x=195, y=45)
-   Label(window, text = "OpenZCS", bg="white", font =('Segoe UI Light', 10)).place(x=350, y=45)
-   Button(master=window, borderwidth=0, text="OK", relief="flat", width=4, height=1, font=('Segoe UI Semibold', 11)).place(x=300, y=470)
+def about():
+   about = Toplevel()
+   about.title("About (OpenZCS) (debug)")
+   p2 = PhotoImage(file = 'OpenZCS/about.png')
+   about.iconphoto(False, p2)
+   about.geometry("450x550")
+   about.minsize(450, 550)
+   about.maxsize(450, 550)
+   about.configure(bg='white')
+   def exit_about():
+        about.destroy()
+        about.update()
+   Label(about, text = "zeqOS", bg="white", font =('Segoe UI Semibold', 28)).place(x=75, y=45)
+   Label(about, text = "Chabazite", bg="white", font =('Segoe UI Light', 28)).place(x=195, y=45)
+   Label(about, text = "OpenZCS", bg="white", font =('Segoe UI Light', 10)).place(x=350, y=45)
+   Button(master=about, borderwidth=0, bg='black', fg='white', text="OK", relief="flat", width=7, height=1, command=lambda:exit_about(), font=('Segoe UI Semibold', 10)).place(x=383, y=517)
+   Label(about, text = "zeqOS Studio (OpenZCS) - Version 1.0.1 Chabazite", bg="white", font =('Segoe UI', 8)).place(x=20, y=135)
+   Label(about, text = """The zeqOS Chabazite Series is produced and owned by Zulo. Do not share or 
+view code.""", bg="white", justify=LEFT, font  =('Segoe UI', 8)).place(x=20, y=155)
+   Label(about, text = """This product was licensed to: 
+"""+(username)+"""""", bg="white", justify=LEFT, font  =('Segoe UI', 8)).place(x=20, y=445)
 
 
 window = Tk(className='zeqOS Studio (OpenZCS) (debug)')
-img = PhotoImage(file="OK_Button.png")
+img = PhotoImage(file="OpenZCS/OK_Button.png")
 # set window size
 window.geometry("900x600")
 window.configure(bg='white')
@@ -57,7 +70,7 @@ Button(master=window, text="New", relief="flat", width=5, height=1, font=('Segoe
 Button(master=window, text="Save", relief="flat", width=5, height=1, font=('Segoe UI Semibold', 11), bg="white").place(x=60, y=0)
 Button(master=window, text="Run", relief="flat", width=5, height=1, font=('Segoe UI Semibold', 11), bg="white", command = lambda:run()).place(x=115, y=0)
 Button(master=window, text="Help", relief="flat", width=5, height=1, font=('Segoe UI Semibold', 11), bg="white").place(x=170, y=0)
-Button(master=window, text="Info", relief="flat", width=5, height=1, font=('Segoe UI Semibold', 11), bg="white", command = lambda:info()).place(x=225, y=0)
+Button(master=window, text="Info", relief="flat", width=5, height=1, font=('Segoe UI Semibold', 11), bg="white", command = lambda:about()).place(x=225, y=0)
 Label(window, text = "Project Code", bg="white", font =('Segoe UI Semibold', 11)).place(x=15, y=45)
 input = Text(window, height = 15, width = 108, relief="flat",font =('Segoe UI', 11), bg = "white")
 input.place(x=15, y=75)
@@ -73,7 +86,7 @@ date_time = date()
 console.insert(END, ''+(date_time)+' - '+(username)+' just created their own ZCS Project.'+'\n')
 console.config(state=DISABLED)
 
-p1 = PhotoImage(file = 'zeqosstudio.png')
+p1 = PhotoImage(file = 'OpenZCS/zeqosstudio.png')
  
 # Setting icon of master window
 window.iconphoto(False, p1)

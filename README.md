@@ -1,5 +1,5 @@
 # OpenZCS
-A open source version of the ZCS programming language in zeqOS Chabazite
+An open source version of the ZCS programming language in zeqOS Chabazite
 
 ## build
 
