@@ -1,11 +1,11 @@
 # OpenZCS
-An open source version of the ZCS programming language in zeqOS Chabazite
+An open source version of the ZCS(ZeqOS Coding Structure) programming language in zeqOS Chabazite
 
 ## build
 
 ### windows
 
-- Donwload and install python form [here](https://www.python.org/downloads/).
+- Download and install Python from [here](https://www.python.org/downloads/).
 
 - Install nuitka `python -m pip install nuitka`
 
