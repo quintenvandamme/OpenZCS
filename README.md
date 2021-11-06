@@ -1,6 +1,10 @@
 # OpenZCS
 An open source version of the ZCS(ZeqOS Coding Structure) programming language in zeqOS Chabazite
 
+## screenshot
+
+![image](https://user-images.githubusercontent.com/58103738/140604291-826011b9-8b7a-4158-a113-e6918959995e.png)
+
 ## build
 
 ### windows
