@@ -52,7 +52,7 @@ def run():
 def about():
    about = Toplevel()
    about.title("About (OpenZCS) (debug)")
-   p2 = PhotoImage(file = 'OpenZCS/about.png')
+   p2 = PhotoImage(file = 'OpenZCS/assets/about.png')
    about.iconphoto(False, p2)
    about.geometry("450x550")
    about.minsize(450, 550)
@@ -74,7 +74,7 @@ view code.""", bg="white", fg='black', highlightbackground = "white", justify=LE
 def help():
    help = Toplevel()
    help.title("Help (OpenZCS) (debug)")
-   p3 = PhotoImage(file = 'OpenZCS/help.png')
+   p3 = PhotoImage(file = 'OpenZCS/assets/help.png')
    help.iconphoto(False, p3)
    help.geometry("450x550")
    help.minsize(450, 550)
@@ -133,7 +133,7 @@ def help():
          helpN.config(bg="black")          
 
 window = Tk(className='zeqOS Studio (OpenZCS) (debug)')
-img = PhotoImage(file="OpenZCS/OK_Button.png")
+img = PhotoImage(file="OpenZCS/assets/OK_Button.png")
 # set window size
 window.geometry("900x600")
 window.configure(bg='white')
@@ -157,7 +157,7 @@ date_time = date()
 console.insert(END, ''+(date_time)+' - '+(username)+' just created their own ZCS Project.'+'\n')
 console.config(state=DISABLED)
 
-p1 = PhotoImage(file = 'OpenZCS/zeqosstudio.png')
+p1 = PhotoImage(file = 'OpenZCS/assets/zeqosstudio.png')
  
 # Setting icon of master window
 window.iconphoto(False, p1)

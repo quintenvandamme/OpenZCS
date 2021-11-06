@@ -11,7 +11,7 @@ An open source version of the ZCS(ZeqOS Coding Structure) programming language i
 
 - Download and install Python from [here](https://www.python.org/downloads/).
 
-- Install nuitka `python -m pip install nuitka`
+- Install nuitka `python -m pip install python-tk nuitka`
 
 ```bash
 python -m nuitka --onefile --include-package=tk-inter main.py
