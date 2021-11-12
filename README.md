@@ -31,7 +31,7 @@ python -m nuitka --follow-imports --include-package=tkinter main.py
 
 #### Ubuntu
 
-- Install tkinter `sudo apt install python3-pip tk`
+- Install tkinter `sudo apt install python3-pip python3-tk`
 
 - Install nuitka `pip3 install nuitka`
 
