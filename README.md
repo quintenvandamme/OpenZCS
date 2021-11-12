@@ -21,9 +21,9 @@ python -m nuitka --onefile --include-package=tk-inter main.py
 
 #### Arch linux
 
-- Install nuitka `python -m pip install nuitka`
-
 - Install tkinter `sudo pacman -S tk`
+
+- Install nuitka `python -m pip install nuitka`
 
 ```bash
 python -m nuitka --follow-imports --include-package=tkinter main.py
@@ -31,9 +31,9 @@ python -m nuitka --follow-imports --include-package=tkinter main.py
 
 #### Ubuntu
 
-- Install nuitka `python -m pip install nuitka`
+- Install tkinter `sudo apt install python3-pip tk`
 
-- Install tkinter `sudo apt install tk`
+- Install nuitka `pip3 install nuitka`
 
 ```bash
 python -m nuitka --follow-imports --include-package=tkinter main.py
